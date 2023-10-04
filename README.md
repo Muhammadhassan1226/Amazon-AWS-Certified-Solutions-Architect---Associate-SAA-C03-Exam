@@ -20,11 +20,15 @@ D. Upload the data from each site to an Amazon EC2 instance in the closest Regio
 
 A. Use Amazon Redshift to load all the content into one place and run the SQL queries as needed.
 
+
 B. Use Amazon CloudWatch Logs to store the logs. Run SQL queries as needed from the Amazon CloudWatch console.
+
 
 `**C. Use Amazon Athena directly with Amazon S3 to run the queries as needed.**`
 
+
 D. Use AWS Glue to catalog the logs. Use a transient Apache Spark cluster on Amazon EMR to run the SQL queries as needed
+
 
 ## Question #3
 
