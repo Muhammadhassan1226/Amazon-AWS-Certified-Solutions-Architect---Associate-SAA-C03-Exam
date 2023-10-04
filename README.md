@@ -36,6 +36,7 @@ D. Use AWS Glue to catalog the logs. Use a transient Apache Spark cluster on Ama
 Which solution meets these requirements with the LEAST amount of operational overhead?
 
 
+
 `A. Add the aws PrincipalOrgID global condition key with a reference to the organization ID to the S3 bucket policy.`
 
 
@@ -44,11 +45,14 @@ B. Create an organizational unit (OU) for each department. Add the aws:Principal
 
 
 
+
 C. Use AWS CloudTrail to monitor the CreateAccount, InviteAccountToOrganization, LeaveOrganization, and RemoveAccountFromOrganization events. Update the S3 bucket policy accordingly.
 
 
 
+
 D. Tag each user that needs access to the S3 bucket. Add the aws:PrincipalTag global condition key to the S3 bucket policy.
+
 
 
 
@@ -57,32 +61,51 @@ D. Tag each user that needs access to the S3 bucket. Add the aws:PrincipalTag gl
 An application runs on an Amazon EC2 instance in a VPC. The application processes logs that are stored in an Amazon S3 bucket. The EC2 instance needs to access the S3 bucket without connectivity to the internet.
 Which solution will provide private network connectivity to Amazon S3?
 
+
+
 `A. Create a gateway VPC endpoint to the S3 bucket.`
+
 
 
 B. Stream the logs to Amazon CloudWatch Logs. Export the logs to the S3 bucket.
 
 
+
+
 C. Create an instance profile on Amazon EC2 to allow S3 access.
 
 
+
+
 D. Create an Amazon API Gateway API with a private link to access the S3 endpoint.
+
+
 
 ## Question #5
 
 A company is hosting a web application on AWS using a single Amazon EC2 instance that stores user-uploaded documents in an Amazon EBS volume. For better scalability and availability, the company duplicated the architecture and created a second EC2 instance and EBS volume in another Availability Zone, placing both behind an Application Load Balancer. After completing this change, users reported that, each time they refreshed the website, they could see one subset of their documents or the other, but never all of the documents at the same time.
 What should a solutions architect propose to ensure users see all of their documents at once?
 
+
+
 A. Copy the data so both EBS volumes contain all the documents
+
+
 
 
 B. Configure the Application Load Balancer to direct a user to the server with the documents
 
 
+
+
 `C. Copy the data from both EBS volumes to Amazon EFS. Modify the application to save new documents to Amazon EFS`
 
 
+
+
 D. Configure the Application Load Balancer to send the request to both servers. Return each document from the correct server
+
+
 
 ## Question #6
 
