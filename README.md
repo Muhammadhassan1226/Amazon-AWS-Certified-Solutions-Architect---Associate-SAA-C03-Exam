@@ -123,25 +123,57 @@ C. Deploy an S3 File Gateway on premises. Create a public service endpoint to co
 
 D. Set up an AWS Direct Connect connection between the on-premises network and AWS. Deploy an S3 File Gateway on premises. Create a public virtual interface (VIF) to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS file share on the S3 File Gateway. Point the new file share to the S3 bucket. Transfer the data from the existing NFS file share to the S3 File Gateway.
 
+
 ## Question #7
+
 
 A company has an application that ingests incoming messages. Dozens of other applications and microservices then quickly consume these messages. The number of messages varies drastically and sometimes increases suddenly to 100,000 each second. The company wants to decouple the solution and increase scalability.
 Which solution meets these requirements?
 
+
+
 A. Persist the messages to Amazon Kinesis Data Analytics. Configure the consumer applications to read and process the messages.
+
+
+
+
 B. Deploy the ingestion application on Amazon EC2 instances in an Auto Scaling group to scale the number of EC2 instances based on CPU metrics.
+
+
+
+
 C. Write the messages to Amazon Kinesis Data Streams with a single shard. Use an AWS Lambda function to preprocess messages and store them in Amazon DynamoDB. Configure the consumer applications to read from DynamoDB to process the messages.
+
+
+
 `D. Publish the messages to an Amazon Simple Notification Service (Amazon SNS) topic with multiple Amazon Simple Queue Service (Amazon SOS) subscriptions. Configure the consumer applications to process the messages from the queues.`
+
+
 
 ## Question #8
 
 A company is migrating a distributed application to AWS. The application serves variable workloads. The legacy platform consists of a primary server that coordinates jobs across multiple compute nodes. The company wants to modernize the application with a solution that maximizes resiliency and scalability.
 How should a solutions architect design the architecture to meet these requirements?
 
+
+
+
+
 A. Configure an Amazon Simple Queue Service (Amazon SQS) queue as a destination for the jobs. Implement the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure EC2 Auto Scaling to use scheduled scaling.
+
+
+
 `B. Configure an Amazon Simple Queue Service (Amazon SQS) queue as a destination for the jobs. Implement the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure EC2 Auto Scaling based on the size of the queue.`
+
+
+
 C. Implement the primary server and the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure AWS CloudTrail as a destination for the jobs. Configure EC2 Auto Scaling based on the load on the primary server.
+
+
+
 D. Implement the primary server and the compute nodes with Amazon EC2 instances that are managed in an Auto Scaling group. Configure Amazon EventBridge (Amazon CloudWatch Events) as a destination for the jobs. Configure EC2 Auto Scaling based on the load on the compute nodes.
+
+
 
 ## Question#9
 
@@ -149,10 +181,19 @@ A company is running an SMB file server in its data center. The file server stor
 The total data size is increasing and is close to the company’s total storage capacity. A solutions architect must increase the company’s available storage space without losing low-latency access to the most recently accessed files. The solutions architect must also provide file lifecycle management to avoid future storage issues.
 Which solution will meet these requirements?
 
+
+
 A. Use AWS DataSync to copy data that is older than 7 days from the SMB file server to AWS.
+
+
 `B. Create an Amazon S3 File Gateway to extend the company’s storage space. Create an S3 Lifecycle policy to transition the data to S3 Glacier Deep Archive after 7 days.`
+
+
 C. Create an Amazon FSx for Windows File Server file system to extend the company’s storage space.
+
+
 D. Install a utility on each user’s computer to access Amazon S3. Create an S3 Lifecycle policy to transition the data to S3 Glacier Flexible Retrieval after 7 days.
+
 
 ## Question#10
 
