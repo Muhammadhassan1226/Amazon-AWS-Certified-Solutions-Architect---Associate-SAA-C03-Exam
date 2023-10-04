@@ -39,13 +39,18 @@ Which solution meets these requirements with the LEAST amount of operational ove
 `A. Add the aws PrincipalOrgID global condition key with a reference to the organization ID to the S3 bucket policy.`
 
 
+
 B. Create an organizational unit (OU) for each department. Add the aws:PrincipalOrgPaths global condition key to the S3 bucket policy.
+
 
 
 C. Use AWS CloudTrail to monitor the CreateAccount, InviteAccountToOrganization, LeaveOrganization, and RemoveAccountFromOrganization events. Update the S3 bucket policy accordingly.
 
 
+
 D. Tag each user that needs access to the S3 bucket. Add the aws:PrincipalTag global condition key to the S3 bucket policy.
+
+
 
 ## Question #4
 
