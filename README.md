@@ -19,8 +19,11 @@ D. Upload the data from each site to an Amazon EC2 instance in the closest Regio
 ### A company needs the ability to analyze the log files of its proprietary application. The logs are stored in JSON format in an Amazon S3 bucket. Queries will be simple and will run on-demand. A solutions architect needs to perform the analysis with minimal changes to the existing architecture.What should the solutions architect do to meet these requirements with the LEAST amount of operational overhead?
 
 A. Use Amazon Redshift to load all the content into one place and run the SQL queries as needed.
+
 B. Use Amazon CloudWatch Logs to store the logs. Run SQL queries as needed from the Amazon CloudWatch console.
+
 `**C. Use Amazon Athena directly with Amazon S3 to run the queries as needed.**`
+
 D. Use AWS Glue to catalog the logs. Use a transient Apache Spark cluster on Amazon EMR to run the SQL queries as needed
 
 ## Question #3
@@ -340,4 +343,5 @@ A. Store the transactions data into Amazon DynamoDB. Set up a rule in DynamoDB t
 B. Stream the transactions data into Amazon Kinesis Data Firehose to store data in Amazon DynamoDB and Amazon S3. Use AWS Lambda integration with Kinesis Data Firehose to remove sensitive data. Other applications can consume the data stored in Amazon S3.
 `C. Stream the transactions data into Amazon Kinesis Data Streams. Use AWS Lambda integration to remove sensitive data from every transaction and then store the transactions data in Amazon DynamoDB. Other applications can consume the transactions data off the Kinesis data stream.`
 D. Store the batched transactions data in Amazon S3 as files. Use AWS Lambda to process every file and remove sensitive data before updating the files in Amazon S3. The Lambda function then stores the data in Amazon DynamoDB. Other applications can consume transaction files stored in Amazon S3.
+
 
