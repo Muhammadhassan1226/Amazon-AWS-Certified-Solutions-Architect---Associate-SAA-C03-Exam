@@ -797,4 +797,490 @@ D. Store the batched transactions data in Amazon S3 as files. Use AWS Lambda to 
 
 
 
+## Question#34
+
+A company hosts its multi-tier applications on AWS. For compliance, governance, auditing, and security, the company must track configuration changes on its AWS resources and record a history of API calls made to these resources.
+What should a solutions architect do to meet these requirements?
+
+
+
+A. Use AWS CloudTrail to track configuration changes and AWS Config to record API calls.
+
+
+
+`B. Use AWS Config to track configuration changes and AWS CloudTrail to record API calls.`
+
+
+
+C. Use AWS Config to track configuration changes and Amazon CloudWatch to record API calls.
+
+
+
+D. Use AWS CloudTrail to track configuration changes and Amazon CloudWatch to record API calls.
+
+
+## Question#35
+
+A company is preparing to launch a public-facing web application in the AWS Cloud. The architecture consists of Amazon EC2 instances within a VPC behind an Elastic Load Balancer (ELB). A third-party service is used for the DNS. The company’s solutions architect must recommend a solution to detect and protect against large-scale DDoS attacks.
+Which solution meets these requirements?
+
+
+
+
+A. Enable Amazon GuardDuty on the account.
+
+
+
+B. Enable Amazon Inspector on the EC2 instances.
+
+
+
+C. Enable AWS Shield and assign Amazon Route 53 to it.
+
+
+
+`D. Enable AWS Shield Advanced and assign the ELB to it.`
+
+
+
+## Question#36
+
+A company is building an application in the AWS Cloud. The application will store data in Amazon S3 buckets in two AWS Regions. The company must use an AWS Key Management Service (AWS KMS) customer managed key to encrypt all data that is stored in the S3 buckets. The data in both S3 buckets must be encrypted and decrypted with the same KMS key. The data and the key must be stored in each of the two Regions.
+Which solution will meet these requirements with the LEAST operational overhead?
+
+
+
+
+A. Create an S3 bucket in each Region. Configure the S3 buckets to use server-side encryption with Amazon S3 managed encryption keys (SSE-S3). Configure replication between the S3 buckets.
+
+
+`
+B. Create a customer managed multi-Region KMS key. Create an S3 bucket in each Region. Configure replication between the S3 buckets. Configure the application to use the KMS key with client-side encryption.`
+
+
+
+C. Create a customer managed KMS key and an S3 bucket in each Region. Configure the S3 buckets to use server-side encryption with Amazon S3 managed encryption keys (SSE-S3). Configure replication between the S3 buckets.
+
+
+
+D. Create a customer managed KMS key and an S3 bucket in each Region. Configure the S3 buckets to use server-side encryption with AWS KMS keys (SSE-KMS). Configure replication between the S3 buckets
+
+
+
+## Question#37
+
+A company recently launched a variety of new workloads on Amazon EC2 instances in its AWS account. The company needs to create a strategy to access and administer the instances remotely and securely. The company needs to implement a repeatable process that works with native AWS services and follows the AWS Well-Architected Framework.
+Which solution will meet these requirements with the LEAST operational overhead?
+
+
+
+A. Use the EC2 serial console to directly access the terminal interface of each instance for administration.
+
+
+
+
+`B. Attach the appropriate IAM role to each existing instance and new instance. Use AWS Systems Manager Session Manager to establish a remote SSH session.`
+
+
+
+
+C. Create an administrative SSH key pair. Load the public key into each EC2 instance. Deploy a bastion host in a public subnet to provide a tunnel for administration of each instance.
+
+
+
+
+
+D. Establish an AWS Site-to-Site VPN connection. Instruct administrators to use their local on-premises machines to connect directly to the instances by using SSH keys across the VPN 
+tunnel
+
+
+
+
+## Question#38
+
+A company is hosting a static website on Amazon S3 and is using Amazon Route 53 for DNS. The website is experiencing increased demand from around the world. The company must decrease latency for users who access the website.
+Which solution meets these requirements MOST cost-effectively?
+
+
+
+
+A. Replicate the S3 bucket that contains the website to all AWS Regions. Add Route 53 geolocation routing entries.
+
+
+
+
+B. Provision accelerators in AWS Global Accelerator. Associate the supplied IP addresses with the S3 bucket. Edit the Route 53 entries to point to the IP addresses of the accelerators.
+
+
+
+
+`C. Add an Amazon CloudFront distribution in front of the S3 bucket. Edit the Route 53 entries to point to the CloudFront distribution.`
+
+
+
+
+D. Enable S3 Transfer Acceleration on the bucket. Edit the Route 53 entries to point to the new endpoint.
+
+
+
+## Question#39
+
+A company maintains a searchable repository of items on its website. The data is stored in an Amazon RDS for MySQL database table that contains more than 10 million rows. The database has 2 TB of General Purpose SSD storage. There are millions of updates against this data every day through the company’s website.
+The company has noticed that some insert operations are taking 10 seconds or longer. The company has determined that the database storage performance is the problem.
+Which solution addresses this performance issue?
+
+
+
+
+`A. Change the storage type to Provisioned IOPS SSD.`
+
+
+
+
+B. Change the DB instance to a memory optimized instance class.
+
+
+
+
+C. Change the DB instance to a burstable performance instance class.
+
+
+
+
+D. Enable Multi-AZ RDS read replicas with MySQL native asynchronous replication.
+
+
+
+## Question#40
+
+A company has thousands of edge devices that collectively generate 1 TB of status alerts each day. Each alert is approximately 2 KB in size. A solutions architect needs to implement a solution to ingest and store the alerts for future analysis. The company wants a highly available solution. However, the company needs to minimize costs and does not want to manage additional infrastructure. Additionally, the company wants to keep 14 days of data available for immediate analysis and archive any data older than 14 days.
+What is the MOST operationally efficient solution that meets these requirements?
+
+
+
+
+`A. Create an Amazon Kinesis Data Firehose delivery stream to ingest the alerts. Configure the Kinesis Data Firehose stream to deliver the alerts to an Amazon S3 bucket. Set up an S3 Lifecycle configuration to transition data to Amazon S3 Glacier after 14 days.`
+
+
+
+
+B. Launch Amazon EC2 instances across two Availability Zones and place them behind an Elastic Load Balancer to ingest the alerts. Create a script on the EC2 instances that will store the alerts in an Amazon S3 bucket. Set up an S3 Lifecycle configuration to transition data to Amazon S3 Glacier after 14 days.
+
+
+
+
+C. Create an Amazon Kinesis Data Firehose delivery stream to ingest the alerts. Configure the Kinesis Data Firehose stream to deliver the alerts to an Amazon OpenSearch Service (Amazon Elasticsearch Service) cluster. Set up the Amazon OpenSearch Service (Amazon Elasticsearch Service) cluster to take manual snapshots every day and delete data from the cluster that is older than 14 days.
+
+
+
+
+D. Create an Amazon Simple Queue Service (Amazon SQS) standard queue to ingest the alerts, and set the message retention period to 14 days. Configure consumers to poll the SQS queue, check the age of the message, and analyze the message data as needed. If the message is 14 days old, the consumer should copy the message to an Amazon S3 bucket and delete the message from the SQS queue.
+
+
+
+
+
+## Question#41
+
+A company’s application integrates with multiple software-as-a-service (SaaS) sources for data collection. The company runs Amazon EC2 instances to receive the data and to upload the data to an Amazon S3 bucket for analysis. The same EC2 instance that receives and uploads the data also sends a notification to the user when an upload is complete. The company has noticed slow application performance and wants to improve the performance as much as possible.
+Which solution will meet these requirements with the LEAST operational overhead?
+
+
+
+A. Create an Auto Scaling group so that EC2 instances can scale out. Configure an S3 event notification to send events to an Amazon Simple Notification Service (Amazon SNS) topic when the upload to the S3 bucket is complete.
+
+
+
+
+`B. Create an Amazon AppFlow flow to transfer data between each SaaS source and the S3 bucket. Configure an S3 event notification to send events to an Amazon Simple Notification Service (Amazon SNS) topic when the upload to the S3 bucket is complete.`
+
+
+
+
+C. Create an Amazon EventBridge (Amazon CloudWatch Events) rule for each SaaS source to send output data. Configure the S3 bucket as the rule’s target. Create a second EventBridge (Cloud Watch Events) rule to send events when the upload to the S3 bucket is complete. Configure an Amazon Simple Notification Service (Amazon SNS) topic as the second rule’s target.
+
+
+
+
+
+D. Create a Docker container to use instead of an EC2 instance. Host the containerized application on Amazon Elastic Container Service (Amazon ECS). Configure Amazon CloudWatch Container Insights to send events to an Amazon Simple Notification Service (Amazon SNS) topic when the upload to the S3 bucket is complete.
+
+
+
+
+
+
+
+## Question#42
+
+A company runs a highly available image-processing application on Amazon EC2 instances in a single VPC. The EC2 instances run inside several subnets across multiple Availability Zones. The EC2 instances do not communicate with each other. However, the EC2 instances download images from Amazon S3 and upload images to Amazon S3 through a single NAT gateway. The company is concerned about data transfer charges.
+What is the MOST cost-effective way for the company to avoid Regional data transfer charges?
+
+
+
+
+
+A. Launch the NAT gateway in each Availability Zone.
+
+
+
+B. Replace the NAT gateway with a NAT instance.
+
+
+
+
+`C. Deploy a gateway VPC endpoint for Amazon S3.`
+
+
+
+
+D. Provision an EC2 Dedicated Host to run the EC2 instances.
+
+
+
+
+
+## Question#43
+
+A company has an on-premises application that generates a large amount of time-sensitive data that is backed up to Amazon S3. The application has grown and there are user complaints about internet bandwidth limitations. A solutions architect needs to design a long-term solution that allows for both timely backups to Amazon S3 and with minimal impact on internet connectivity for internal users.
+Which solution meets these requirements?
+
+
+
+
+A. Establish AWS VPN connections and proxy all traffic through a VPC gateway endpoint.
+
+
+
+
+`B. Establish a new AWS Direct Connect connection and direct backup traffic through this new connection.`
+
+
+
+
+C. Order daily AWS Snowball devices. Load the data onto the Snowball devices and return the devices to AWS each day.
+
+
+
+
+D. Submit a support ticket through the AWS Management Console. Request the removal of S3 service limits from the account.
+
+
+
+
+## Question#44
+
+A company has an Amazon S3 bucket that contains critical data. The company must protect the data from accidental deletion.
+Which combination of steps should a solutions architect take to meet these requirements? (Choose two.)
+
+
+
+`A. Enable versioning on the S3 bucket`
+
+
+
+
+`B. Enable MFA Delete on the S3 bucket.`
+
+
+
+C. Create a bucket policy on the S3 bucket.
+
+
+
+
+D. Enable default encryption on the S3 bucket.
+
+
+
+
+E. Create a lifecycle policy for the objects in the S3 bucket.
+
+
+
+
+
+
+## Question#45
+
+A company has a data ingestion workflow that consists of the following:
+• An Amazon Simple Notification Service (Amazon SNS) topic for notifications about new data deliveries
+• An AWS Lambda function to process the data and record metadata
+## The company observes that the ingestion workflow fails occasionally because of network connectivity issues. When such a failure occurs, the Lambda function does not ingest the corresponding data unless the company manually reruns the job.
+Which combination of actions should a solutions architect take to ensure that the Lambda function ingests all data in the future? (Choose two.)
+
+
+
+
+A. Deploy the Lambda function in multiple Availability Zones.
+
+
+
+
+`B. Create an Amazon Simple Queue Service (Amazon SQS) queue, and subscribe it to the SNS topic.`
+
+
+
+
+C. Increase the CPU and memory that are allocated to the Lambda function.
+
+
+
+
+
+D. Increase provisioned throughput for the Lambda function.
+
+
+
+
+`E. Modify the Lambda function to read from an Amazon Simple Queue Service (Amazon SQS) queue`
+
+
+## Question#46
+
+
+A company has an application that provides marketing services to stores. The services are based on previous purchases by store customers. The stores upload transaction data to the company through SFTP, and the data is processed and analyzed to generate new marketing offers. Some of the files can exceed 200 GB in size.
+Recently, the company discovered that some of the stores have uploaded files that contain personally identifiable information (PII) that should not have been included. The company wants administrators to be alerted if PII is shared again. The company also wants to automate remediation.
+What should a solutions architect do to meet these requirements with the LEAST development effort?
+
+
+
+A. Use an Amazon S3 bucket as a secure transfer point. Use Amazon Inspector to scan the objects in the bucket. If objects contain PII, trigger an S3 Lifecycle policy to remove the objects that contain PII.
+
+
+
+
+`B. Use an Amazon S3 bucket as a secure transfer point. Use Amazon Macie to scan the objects in the bucket. If objects contain PII, use Amazon Simple Notification Service (Amazon SNS) to trigger a notification to the administrators to remove the objects that contain PII.`
+
+
+
+
+C. Implement custom scanning algorithms in an AWS Lambda function. Trigger the function when objects are loaded into the bucket. If objects contain PII, use Amazon Simple Notification Service (Amazon SNS) to trigger a notification to the administrators to remove the objects that contain PII.
+
+
+
+
+D. Implement custom scanning algorithms in an AWS Lambda function. Trigger the function when objects are loaded into the bucket. If objects contain PII, use Amazon Simple Email Service (Amazon SES) to trigger a notification to the administrators and trigger an S3 Lifecycle policy to remove the meats that contain PII.
+
+
+
+
+## Question#47
+
+A company needs guaranteed Amazon EC2 capacity in three specific Availability Zones in a specific AWS Region for an upcoming event that will last 1 week.
+What should the company do to guarantee the EC2 capacity?
+
+
+
+
+A. Purchase Reserved Instances that specify the Region needed.
+
+
+
+
+
+B. Create an On-Demand Capacity Reservation that specifies the Region needed.
+
+
+
+
+C. Purchase Reserved Instances that specify the Region and three Availability Zones needed.
+
+
+
+
+`D. Create an On-Demand Capacity Reservation that specifies the Region and three Availability Zones needed.`
+
+
+
+
+
+## Question#48
+
+A company’s website uses an Amazon EC2 instance store for its catalog of items. The company wants to make sure that the catalog is highly available and that the catalog is stored in a durable location.
+What should a solutions architect do to meet these requirements?
+
+
+
+A. Move the catalog to Amazon ElastiCache for Redis.
+
+
+
+
+B. Deploy a larger EC2 instance with a larger instance store.
+
+
+
+
+C. Move the catalog from the instance store to Amazon S3 Glacier Deep Archive.
+
+
+
+
+`D. Move the catalog to an Amazon Elastic File System (Amazon EFS) file system.`
+
+
+
+
+## Question#49
+
+A company stores call transcript files on a monthly basis. Users access the files randomly within 1 year of the call, but users access the files infrequently after 1 year. The company wants to optimize its solution by giving users the ability to query and retrieve files that are less than 1-year-old as quickly as possible. A delay in retrieving older files is acceptable.
+Which solution will meet these requirements MOST cost-effectively?
+
+
+
+
+A. Store individual files with tags in Amazon S3 Glacier Instant Retrieval. Query the tags to retrieve the files from S3 Glacier Instant Retrieval.
+
+
+
+
+
+`B. Store individual files in Amazon S3 Intelligent-Tiering. Use S3 Lifecycle policies to move the files to S3 Glacier Flexible Retrieval after 1 year. Query and retrieve the files that are in Amazon S3 by using Amazon Athena. Query and retrieve the files that are in S3 Glacier by using S3 Glacier Select.`
+
+
+
+
+
+C. Store individual files with tags in Amazon S3 Standard storage. Store search metadata for each archive in Amazon S3 Standard storage. Use S3 Lifecycle policies to move the files to S3 Glacier Instant Retrieval after 1 year. Query and retrieve the files by searching for metadata from Amazon S3.
+
+
+
+
+
+D. Store individual files in Amazon S3 Standard storage. Use S3 Lifecycle policies to move the files to S3 Glacier Deep Archive after 1 year. Store search metadata in Amazon RDS. Query the files from Amazon RDS. Retrieve the files from S3 Glacier Deep Archive.
+
+
+
+
+
+## Question#50
+
+A company has a production workload that runs on 1,000 Amazon EC2 Linux instances. The workload is powered by third-party software. The company needs to patch the third-party software on all EC2 instances as quickly as possible to remediate a critical security vulnerability.
+What should a solutions architect do to meet these requirements?
+
+
+
+
+A. Create an AWS Lambda function to apply the patch to all EC2 instances.
+
+
+
+
+B. Configure AWS Systems Manager Patch Manager to apply the patch to all EC2 instances.
+
+
+
+
+C. Schedule an AWS Systems Manager maintenance window to apply the patch to all EC2 instances.
+
+
+
+
+`D. Use AWS Systems Manager Run Command to run a custom command that applies the patch to all EC2 instances.`
+
+
+
+
+
 
