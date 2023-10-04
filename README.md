@@ -35,9 +35,16 @@ D. Use AWS Glue to catalog the logs. Use a transient Apache Spark cluster on Ama
 ### A company uses AWS Organizations to manage multiple AWS accounts for different departments. The management account has an Amazon S3 bucket that contains project reports. The company wants to limit access to this S3 bucket to only users of accounts within the organization in AWS Organizations.
 Which solution meets these requirements with the LEAST amount of operational overhead?
 
+
 `A. Add the aws PrincipalOrgID global condition key with a reference to the organization ID to the S3 bucket policy.`
+
+
 B. Create an organizational unit (OU) for each department. Add the aws:PrincipalOrgPaths global condition key to the S3 bucket policy.
+
+
 C. Use AWS CloudTrail to monitor the CreateAccount, InviteAccountToOrganization, LeaveOrganization, and RemoveAccountFromOrganization events. Update the S3 bucket policy accordingly.
+
+
 D. Tag each user that needs access to the S3 bucket. Add the aws:PrincipalTag global condition key to the S3 bucket policy.
 
 ## Question #4
@@ -46,8 +53,14 @@ An application runs on an Amazon EC2 instance in a VPC. The application processe
 Which solution will provide private network connectivity to Amazon S3?
 
 `A. Create a gateway VPC endpoint to the S3 bucket.`
+
+
 B. Stream the logs to Amazon CloudWatch Logs. Export the logs to the S3 bucket.
+
+
 C. Create an instance profile on Amazon EC2 to allow S3 access.
+
+
 D. Create an Amazon API Gateway API with a private link to access the S3 endpoint.
 
 ## Question #5
@@ -56,8 +69,14 @@ A company is hosting a web application on AWS using a single Amazon EC2 instance
 What should a solutions architect propose to ensure users see all of their documents at once?
 
 A. Copy the data so both EBS volumes contain all the documents
+
+
 B. Configure the Application Load Balancer to direct a user to the server with the documents
+
+
 `C. Copy the data from both EBS volumes to Amazon EFS. Modify the application to save new documents to Amazon EFS`
+
+
 D. Configure the Application Load Balancer to send the request to both servers. Return each document from the correct server
 
 ## Question #6
@@ -66,8 +85,14 @@ A company uses NFS to store large video files in on-premises network attached st
 Which solution will meet these requirements?
 
 A. Create an S3 bucket. Create an IAM role that has permissions to write to the S3 bucket. Use the AWS CLI to copy all files locally to the S3 bucket.
+
+
 `B. Create an AWS Snowball Edge job. Receive a Snowball Edge device on premises. Use the Snowball Edge client to transfer data to the device. Return the device so that AWS can import the data into Amazon S3.`
+
+
 C. Deploy an S3 File Gateway on premises. Create a public service endpoint to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS file share on the S3 File Gateway. Point the new file share to the S3 bucket. Transfer the data from the existing NFS file share to the S3 File Gateway.
+
+
 D. Set up an AWS Direct Connect connection between the on-premises network and AWS. Deploy an S3 File Gateway on premises. Create a public virtual interface (VIF) to connect to the S3 File Gateway. Create an S3 bucket. Create a new NFS file share on the S3 File Gateway. Point the new file share to the S3 bucket. Transfer the data from the existing NFS file share to the S3 File Gateway.
 
 ## Question #7
